@@ -1,6 +1,9 @@
 import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
 
+// Revalidate every 0 seconds, That means this page will not be cached and data on it will always be up to date
+export const revalidate = 0;
+
 export default function Home() {
   return (
     <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
