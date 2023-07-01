@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    button, img, svg {
+        @apply select-none
+    }
+}
+
 html,
 body,
 :root {

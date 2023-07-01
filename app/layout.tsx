@@ -25,7 +25,7 @@ export default async function RootLayout({
   const userSongs = await getSongsByUserId()
   return (
     <html lang="en">
-      <body className={figtree.className}>
+      <body className={`${figtree.className} selection:bg-[#78FEE0]  selection:text-gray-800`}>
         <ToasterProvider />
         <SupabaseProvider>
           <UserProvider>
