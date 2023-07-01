@@ -13,12 +13,6 @@ const PageContent: React.FC<PageContentProps> = ({ songs }) => {
 
     const onPlay = useOnPlay(songs);
 
-    // const onPlay = (id: string) => {
-    //     const song = useGetSongById(id)
-    //     useOnPlay(song)
-    // }
-
-
     if (songs.length === 0) {
         return (
             <div className="mt-4 text-neutral-400">

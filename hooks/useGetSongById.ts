@@ -10,10 +10,7 @@ const useSongById = (id?: string) => {
   const { supabaseClient } = useSessionContext();
 
   useEffect(() => {
-    if (!id) {
-      return;
-    }
-
+    if (!id) return
     setIsLoading(true);
 
     const fetchSong = async () => {

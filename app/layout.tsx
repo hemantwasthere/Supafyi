@@ -7,6 +7,7 @@ import SupabaseProvider from '@/providers/SupabaseProvider'
 import ToasterProvider from '@/providers/ToasterProvider'
 import UserProvider from '@/providers/UserProvider'
 import './globals.css'
+import Player from '@/components/Player'
 
 const figtree = Figtree({ subsets: ['latin'] })
 
@@ -33,6 +34,7 @@ export default async function RootLayout({
             <Sidebar songs={userSongs}>
               {children}
             </Sidebar>
+            <Player />
           </UserProvider>
         </SupabaseProvider>
       </body>
