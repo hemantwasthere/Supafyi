@@ -1,18 +1,18 @@
 'use client'
 
+import { useSupabaseClient } from '@supabase/auth-helpers-react'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import { toast } from 'react-hot-toast'
 import { BiSearch } from 'react-icons/bi'
-import { HiHome } from 'react-icons/hi'
 import { FaUserAlt } from 'react-icons/fa'
+import { HiHome } from 'react-icons/hi'
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx'
 import { twMerge } from 'tailwind-merge'
-import { useSupabaseClient } from '@supabase/auth-helpers-react'
-import { toast } from 'react-hot-toast'
 
-import Button from './Button'
 import useAuthModal from '@/hooks/useAuthModal'
 import { useUser } from '@/hooks/useUser'
+import Button from './Button'
 
 export interface HeaderProps {
     children: React.ReactNode
@@ -48,10 +48,10 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
                     </button>
                 </div>
                 <div className="flex md:hidden gap-x-2 items-center">
-                    <button className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition">
+                    <button onClick={() => router.push('/')} className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition">
                         <HiHome className='text-black' size={20} />
                     </button>
-                    <button className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition">
+                    <button onClick={() => router.push('/search')} className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition">
                         <BiSearch className='text-black' size={20} />
                     </button>
                 </div>

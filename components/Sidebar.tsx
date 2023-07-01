@@ -5,12 +5,12 @@ import React, { useMemo } from 'react'
 import { BiSearch } from 'react-icons/bi'
 import { HiHome } from 'react-icons/hi'
 
+import usePlayer from '@/hooks/usePlayer'
 import { Song } from '@/types'
+import { twMerge } from 'tailwind-merge'
 import Box from './Box'
 import Library from './Library'
 import SidebarItem from './SidebarItem'
-import usePlayer from '@/hooks/usePlayer'
-import { twMerge } from 'tailwind-merge'
 
 export interface SidebarProps {
     children: React.ReactNode
@@ -50,7 +50,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
                     <Library songs={songs} />
                 </Box>
             </div>
-            <main className='h-full flex-1 overflow-y-auto py-2 pr-2'>
+            <main className='h-full flex-1 overflow-y-auto py-2 pl-2 md:pl-0 pr-2'>
                 {children}
             </main>
         </div>
