@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AiFillStepBackward, AiFillStepForward } from "react-icons/ai";
 import { BsPauseFill, BsPlayFill } from "react-icons/bs";
+import { FaStepBackward, FaStepForward } from "react-icons/fa";
 import { HiSpeakerWave, HiSpeakerXMark } from "react-icons/hi2";
 import useSound from "use-sound";
 
@@ -102,19 +102,19 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
 
             <div className="flex flex-col items-center">
                 <div className="hidden h-full md:flex justify-center items-center w-full max-w-[722px] gap-x-6">
-                    <AiFillStepBackward
+                    <FaStepBackward
                         onClick={onPlayPrevious}
-                        size={25}
+                        size={20}
                         className="text-neutral-400 cursor-pointer hover:text-white transition"
                     />
 
-                    <div onClick={handlePlay} className="flex items-center justify-center h-10 w-10 rounded-full bg-white p-1 cursor-pointer" >
-                        <Icon size={30} className="text-black" />
+                    <div onClick={handlePlay} className="flex items-center justify-center h-8 w-8 rounded-full bg-white p-1 cursor-pointer" >
+                        <Icon size={25} className="text-black" />
                     </div>
 
-                    <AiFillStepForward
+                    <FaStepForward
                         onClick={onPlayNext}
-                        size={25}
+                        size={20}
                         className="text-neutral-400 cursor-pointer hover:text-white transition"
                     />
                 </div>

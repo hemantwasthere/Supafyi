@@ -11,9 +11,9 @@ import { RxCaretLeft, RxCaretRight } from 'react-icons/rx'
 import { twMerge } from 'tailwind-merge'
 
 import useAuthModal from '@/hooks/useAuthModal'
+import usePlayer from '@/hooks/usePlayer'
 import { useUser } from '@/hooks/useUser'
 import Button from './Button'
-import usePlayer from '@/hooks/usePlayer'
 
 export interface HeaderProps {
     children: React.ReactNode

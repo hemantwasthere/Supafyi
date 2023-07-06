@@ -30,7 +30,7 @@ const Seekbar: React.FC<SeekbarProps> = (
     };
 
     return (
-        <div className="flex w-full gap-4 items-center justify-center">
+        <div className="hidden md:flex w-full gap-4 items-center justify-center">
             {/* <button type="button" onClick={() => sound.seek([seconds! - 5])} className="hidden lg:block text-white">-5s</button> */}
 
             <p className="text-xs font-normal text-[#A6A6A7]">
@@ -49,7 +49,7 @@ const Seekbar: React.FC<SeekbarProps> = (
                 >
                     <RadixSlider.Track className="bg-neutral-600 relative grow rounded-full h-1">
                         <RadixSlider.Range
-                            className="transition absolute bg-white group-hover:bg-emerald-600 rounded-full h-full" />
+                            className="transition absolute bg-white group-hover:bg-[#1CB854] rounded-full h-full" />
                     </RadixSlider.Track>
                     <RadixSlider.Thumb className="hidden group-hover:block w-3 h-3 bg-white rounded-full shadow-[0_2px_3px] shadow-black focus:outline-none" aria-label="Seekbar" />
                 </RadixSlider.Root>
