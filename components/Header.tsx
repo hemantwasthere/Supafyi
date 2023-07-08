@@ -2,7 +2,7 @@
 
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
 import { useRouter } from 'next/navigation'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { toast } from 'react-hot-toast'
 import { BiSearch } from 'react-icons/bi'
 import { FaUserAlt } from 'react-icons/fa'
@@ -11,8 +11,10 @@ import { RxCaretLeft, RxCaretRight } from 'react-icons/rx'
 import { twMerge } from 'tailwind-merge'
 
 import useAuthModal from '@/hooks/useAuthModal'
+import useGetUserAvatar from '@/hooks/useGetUserAvatar'
 import usePlayer from '@/hooks/usePlayer'
 import { useUser } from '@/hooks/useUser'
+import Image from 'next/image'
 import Button from './Button'
 
 export interface HeaderProps {
@@ -28,6 +30,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
     const supabaseClient = useSupabaseClient()
     const { user } = useUser()
     const player = usePlayer()
+    const avatar_url = useGetUserAvatar(user?.id)
 
     const handleLogout = async () => {
         const { error } = await supabaseClient.auth.signOut()
@@ -63,9 +66,14 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
                             <Button onClick={handleLogout} className='bg-white px-6 py-2'>
                                 Logout
                             </Button>
-                            <Button onClick={() => router.push('/account')} className='bg-white'>
-                                <FaUserAlt />
-                            </Button>
+                            {avatar_url ? (
+                                <Image onClick={() => router.push('/account')} src={avatar_url!} width={40} height={40} alt="avatar" className="rounded-full cursor-pointer"
+                                />
+                            ) : (
+                                <Button onClick={() => router.push('/account')} className='bg-white'>
+                                    <FaUserAlt />
+                                </Button>
+                            )}
                         </div>
                     ) : (
                         <>
