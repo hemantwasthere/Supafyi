@@ -30,7 +30,7 @@ const Seekbar: React.FC<SeekbarProps> = (
     };
 
     return (
-        <div className="hidden md:flex w-full gap-4 items-center justify-center">
+        <div className="flex w-full gap-4 items-center justify-center">
             {/* <button type="button" onClick={() => sound.seek([seconds! - 5])} className="hidden lg:block text-white">-5s</button> */}
 
             <p className="text-xs font-normal text-[#A6A6A7]">
