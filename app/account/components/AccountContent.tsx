@@ -26,7 +26,10 @@ const AccountContent = () => {
         setLoading(true);
         try {
             const { url, error } = await postData({
-                url: '/api/create-portal-link'
+                url: '/api/create-portal-link',
+                data: {
+                    price: subscription?.prices!
+                },
             });
             window.location.assign(url);
         } catch (error) {
