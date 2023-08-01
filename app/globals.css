@@ -16,22 +16,32 @@ body,
     color-scheme: dark;
 }
 
+/* hidden scrollbar on mobile devices  */
+@media (max-width: 1280px) {
+    html,
+    body,
+    :root {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
 /* width */
 ::-webkit-scrollbar {
-    width: 15px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #5B5B5D;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #8A8B8C;
-  }
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5B5B5D;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #8A8B8C;
+}
