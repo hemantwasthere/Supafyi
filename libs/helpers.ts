@@ -24,11 +24,11 @@ export const postData = async ({ url, data }: { url: string, data?: { price: Pri
   });
   console.log(res)
 
-  if (!res.ok) {
-    console.log('Error in postData', { url, data, res });
+  // if (!res.ok) {
+  //   console.log('Error in postData', { url, data, res });
 
-    throw Error(res.statusText);
-  }
+  //   throw Error(res.statusText);
+  // }
 
   return res.json();
 };
