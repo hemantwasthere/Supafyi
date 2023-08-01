@@ -6,10 +6,10 @@ import { stripe } from '@/libs/stripe';
 import { getURL } from '@/libs/helpers';
 import { createOrRetrieveCustomer } from '@/libs/supabaseAdmin';
 
-export async function POST() {
+export async function POST(req: Request) {
   try {
     const supabase = createRouteHandlerClient({ cookies });
-    
+
     const { data: { user } } = await supabase.auth.getUser();
 
     if (!user) throw Error('Could not get user');
